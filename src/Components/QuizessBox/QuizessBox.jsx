@@ -15,7 +15,6 @@ const QuizessBox = () => {
         }
         fetchQuize();
     }, [])
-    console.log(quizzes);
     return (
         <main className="bg-white p-6 rounded-md h-full">
             <section>
@@ -25,7 +24,7 @@ const QuizessBox = () => {
                     quizzes.map((quizze) => (<div key={quizze.id}
 
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <Link to={`${quizze.is_attempted ? '/result' : `/quize/${quizze.id}`}`}
+                        <Link to={`${quizze.is_attempted ? `/result/${quizze.id}` : `/quize/${quizze.id}`}`}
                             className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-h-[450px] relative group cursor-pointer">
                             <div
                                 className="group-hover:scale-105 absolute transition-all text-white  text-center top-1/2 -translate-y-1/2 px-4">

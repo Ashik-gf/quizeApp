@@ -20,7 +20,6 @@ const LoginFromf = () => {
             // make an API call;
             const response = await axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/login`, formData)
             // will return token and logedin user Informations;
-            console.log(response);
             if (response.data.status === 'success') {
                 const { user, tokens } = response.data.data;
                 if (tokens) {
@@ -51,6 +50,7 @@ const LoginFromf = () => {
                         type="email"
                         name='email'
                         id="email"
+                        defaultValue="saad@learnwithsumit.com"
                         {...register("email", { required: "Email ID is Required" })}
                         className={`w-full px-4 py-3 rounded-lg border ${!!errors.email ? "border-red-500" : "border-gray-200"
                             }`}
@@ -64,6 +64,7 @@ const LoginFromf = () => {
                         type="password"
                         id="password"
                         name='password'
+                        defaultValue={'password123'}
                         {...register("password", { required: "password is Required" })}
                         className={`w-full px-4 py-3 rounded-lg border ${!!errors.password ? "border-red-500" : "border-gray-200"
                             }`}

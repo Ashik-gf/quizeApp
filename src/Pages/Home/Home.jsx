@@ -7,8 +7,6 @@ import useAxios from '../../hooks/useAxios'
 const Home = () => {
     const { auth } = useAuth();
     const api = useAxios();
-    console.log(api);
-    console.log(auth);
     return (
         <div className=' w-full'>
             {
